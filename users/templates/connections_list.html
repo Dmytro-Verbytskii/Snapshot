@@ -4,9 +4,9 @@
 <h1>{{ mode }}</h1>
     {% for user in users %}
         {% if mode in 'following' %}
-            <h3><a href="{% url 'accounts:profile' user.following %}">{{ user.following.username }}</a></h3>
+            <h3><a href="{% url 'users:profile' user.following %}">{{ user.following.username }}</a></h3>
         {% else %}
-            <h3><a href="{% url 'accounts:profile' user.follower %}">{{ user.follower.username }}</a></h3>
+            <h3><a href="{% url 'users:profile' user.follower %}">{{ user.follower.username }}</a></h3>
         {% endif %}
     {% endfor %}
 {% endblock %}

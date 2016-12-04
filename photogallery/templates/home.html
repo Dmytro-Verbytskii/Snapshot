@@ -1,5 +1,16 @@
 {% extends 'index.html' %}
 
 {% block content %}
-<h1>HUY</h1>
+    {% if user.is_authenticated %}
+        <h1>{{ user.username }}'s wall</h1>
+        {% if posts %}
+            {% for post in posts %}
+                {% include 'posts/post.html' %}
+            {% endfor %}
+        {% else %}
+            <h5><a href="{% url 'posts:create' %}">Create your first post :)</a></h5>
+        {% endif %}
+    {% else %}
+        <h1>Login please</h1>
+    {% endif %}
 {% endblock content %}

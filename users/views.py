@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect, Http404
 from django.views import generic
 from django.core.urlresolvers import reverse_lazy
+from django.shortcuts import render
 
 from braces import views
 from posts.helpers import get_posts
@@ -30,7 +31,7 @@ class DetailAccountView(
         context['username'] = username
 
         context['user'] = get_current_user(self.request)
-        context['posts'] = get_posts(username)
+        context['posts'] = get_posts(User.objects.get(username=username))
 
         context['following'] = Connection.objects.filter(
             follower__username=username).count()
@@ -255,3 +256,7 @@ def unfollow_view(request, *args, **kwargs):
             kwargs={'username': following.username}
         )
     )
+
+
+def settings_view(request, *args, **kwargs):
+    return render(request, "settings.html", {"username": kwargs['username']})
