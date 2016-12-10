@@ -1,26 +1,27 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="{% static  "../static/css/layout.css" %}" >
     <title>Welcome to Snapshot</title>
 </head>
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Snapshot</a>
-            </div>
             <ul class="nav navbar-nav">
+
                 <li><a href="/">Home</a></li>
-                <li><a href="#">Page 1</a></li>
-                <li><a href="#">Page 2</a></li>
                 {% if not user.is_authenticated %}
-                <li><a href="/auth/new_user">Sign Up</a></li>
-                <li><a href="/auth/sign_in">Sign In</a></li>
+                <li><a href="{% url 'users:signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'users:login' %}">Sign In</a></li>
                 {% else %}
-                <li><a href="#">Hello, {{ user.username }}!</a></li>
-                <li><a href="/auth/sign_out">Sign Out</a></li>
+                <li><a href="{% url 'users:profile' user.username %}">{{ user.username }}</a></li>
+                <li><a href="{% url 'users:user_list' %}">Browse people</a></li>
+                <li><a href="{% url 'posts:create' %}">New Post</a></li>
+                    <li><a href="{% url 'users:settings' user.username %}">Settings</a></li>
+                    <li><a href="{% url 'users:logout' %}">Sign Out</a></li>
                 {% endif %}
 
             </ul>

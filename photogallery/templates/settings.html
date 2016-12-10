@@ -1,0 +1,6 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {% csrf_token %}
+    <h5 class="Change_pass"><a href="{% url 'users:change_password' user.username %}">Change password</a></h5>
+{% endblock content %}

@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+body, html {
+    padding: 0;
+    margin: 0;
+    background: url("../images/look.com.ua-54897.jpg") no-repeat;
+    background-attachment: fixed;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%
+
+}
+
+.navbar-default {
+    padding-top: 20px;
+	padding-left: 25px;
+    margin: auto;
+    width: 100%;
+    overflow: auto;
+    background: url("../images/look.com.ua-54897.jpg");
+    background-attachment: fixed;
+    border: 0;
+}
+
+.navbar-nav {
+    color: white;
+    font-size: 30px;
+    font-family: "Garamond", "Georgia", "serif";
+
+}
+
+.Change_pass {
+	font-size: 30px;
+	text-align: center;
+}
+
+.os-phrases h2 > span {
+    margin: 0 15px;
+}
+
+.os-phrases h2 {
+	font-family: 'Dosis', 'Lato', sans-serif;
+	font-size: 66px;
+	padding-top: 20%;
+	font-weight: 200;
+	width: 100%;
+	overflow: hidden;
+	text-transform: uppercase;
+	/*padding: 0;*/
+
+	/*position: absolute;*/
+	top: 0;
+	left: 0;
+	letter-spacing: 14px;
+	text-align: center;
+}
+
+.os-phrases h2,
+.os-phrases h2 > span {
+	height: 100%;
+	/* Centering with flexbox */
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-moz-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-moz-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.os-phrases h2 > span {
+	margin: 0 15px;
+}
+
+.os-phrases h2 > span > span {
+	display: inline-block;
+	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	perspective: 1000px;
+	-webkit-transform-origin: 50% 50%;
+	-moz-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+.os-phrases h2 > span > span > span {
+	display: inline-block;
+	color: hsla(0,0%,0%,0);
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	-webkit-animation: OpeningSequence 5.2s linear forwards;
+	-moz-animation: OpeningSequence 5.2s linear forwards;
+	animation: OpeningSequence 5.2s linear forwards;
+}
+
+
+
+.os-phrases h2:nth-child(2) > span > span > span {
+	font-size: 250px;
+	-webkit-animation-delay: 21s;
+	-moz-animation-delay: 21s;
+	animation-delay: 21s;
+	-webkit-animation-duration: 8s;
+	-moz-animation-duration: 8s;
+	animation-duration: 8s;
+}
+
+
+
+@-moz-keyframes OpeningSequence {
+	0% {
+		text-shadow: 0 0 50px #fff;
+		letter-spacing: 80px;
+		opacity: 0.2;
+		-moz-transform: rotateY(-90deg);
+	}
+	50% {
+		text-shadow: 0 0 1px #fff;
+		letter-spacing: 14px;
+		opacity: 0.8;
+		-moz-transform: rotateY(0deg);
+	}
+	85% {
+		text-shadow: 0 0 1px #fff;
+		opacity: 0.8;
+		-moz-transform: rotateY(0deg) translateZ(100px);
+	}
+	100% {
+		text-shadow: 0 0 1px #fff;
+		/*opacity: 0;*/
+		-moz-transform: translateZ(130px);
+		pointer-events: none;
+	}
+}
+
+
+
+/*
+ Hive Automium System
+ Copyright (C) 2008-2012 Hive Solutions Lda.
+
+ This file is part of Hive Automium System.
+
+ Hive Automium System is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ Hive Automium System is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with Hive Automium System. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*
+ __author__    = João Magalhães <joamag@hive.pt>
+ __version__   = 1.0.0
+ __revision__  = $LastChangedRevision$
+ __date__      = $LastChangedDate$
+ __copyright__ = Copyright (c) 2010-2012 Hive Solutions Lda.
+ __license__   = GNU General Public License (GPL), Version 3
+*/

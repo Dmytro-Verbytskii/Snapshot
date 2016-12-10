@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>@{{ username }}</h1>
+    <h3>{{ object.name }}</h3>
+    {% if user.username == username %}
+        <a href="{% url 'users:update' user %}" class="btn btn-success">Edit profile</a>
+    {% elif connected %}
+    <a href="{% url 'users:unfollow' username %}" class="btn btn-success">Unfollow</a>
+    {% else  %}
+        <a href="{% url 'users:follow' username %}" class="btn btn-primary">Follow</a>
+    {% endif %}
+    <a href="{% url 'users:followers' username %}">followers: {{ followers }}</a>
+    <a href="{% url 'users:following' username %}">following: {{ following }}</a>
+    {% if posts %}
+        {% for post in posts %}
+            {% include 'posts/post.html' %}
+        {% endfor %}
+    {% else %}
+        {% if user.username == username %}
+            <h5><a href="{% url 'posts:create' %}">Create your first post :)</a></h5>
+        {% else %}
+            <h5>{{ username }} hasn't posted anything yet :(</h5>
+        {% endif %}
+    {% endif %}
+{% endblock %}

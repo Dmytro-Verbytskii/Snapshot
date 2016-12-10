@@ -1,0 +1,116 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h1>{{ user.username }}'s wall</h1>
+        {% if posts %}
+            {% for post in posts %}
+                {% include 'posts/post.html' %}
+            {% endfor %}
+        {% else %}
+            <h5><a href="{% url 'posts:create' %}">Create your first post :)</a></h5>
+        {% endif %}
+    {% else %}
+        <div class="os-phrases">
+            <h2>
+                 <span class="word1">
+                    <span class="char1">
+                        <span class="char1">
+                        W
+                        </span>
+                    </span>
+                    <span class="char2">
+                        <span class="char1">
+                        e
+                        </span>
+                    </span>
+                    <span class="char3">
+                        <span class="char1">
+                        l
+                        </span>
+                    </span>
+                     <span class="char4">
+                        <span class="char1">
+                        c
+                        </span>
+                    </span>
+                    <span class="char5">
+                        <span class="char1">
+                        o
+                        </span>
+                    </span>
+                    <span class="char6">
+                        <span class="char1">
+                        m
+                        </span>
+                    </span>
+                     <span class="char7">
+                        <span class="char1">
+                        e
+                        </span>
+                    </span>
+                    <span class="char8">
+                        <span class="char1">
+                        `
+                        </span>
+                    </span>
+                    <span class="char9">
+                        <span class="char1">
+                        t
+                        </span>
+                    </span>
+                     <span class="char10">
+                        <span class="char1">
+                        o
+                        </span>
+                    </span>
+                    <span class="char11">
+                        <span class="char1">
+                            `
+                        </span>
+                    </span>
+                    <span class="char12">
+                        <span class="char1">
+                        S
+                        </span>
+                    </span>
+                     <span class="char13">
+                        <span class="char1">
+                        n
+                        </span>
+                    </span>
+                    <span class="char14">
+                        <span class="char1">
+                        a
+                        </span>
+                    </span>
+                    <span class="char15">
+                        <span class="char1">
+                        p
+                        </span>
+                    </span>
+                     <span class="char16">
+                        <span class="char1">
+                        s
+                        </span>
+                    </span>
+                     <span class="char17">
+                        <span class="char1">
+                        h
+                        </span>
+                    </span>
+                    <span class="char18">
+                        <span class="char1">
+                        o
+                        </span>
+                    </span>
+                    <span class="char19">
+                        <span class="char1">
+                        t
+                        </span>
+                    </span>
+            </h2>
+        </div>
+
+    {% endif %}
+{% endblock content %}

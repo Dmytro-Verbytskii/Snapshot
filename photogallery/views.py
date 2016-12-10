@@ -1,5 +1,13 @@
-from django.shortcuts import render
+from django.views import generic
+from posts.models import Post
+from posts.helpers import get_posts
 
-def post_list(request):
-    return render(request, 'post_list.html', {})
+
+class Home(generic.ListView):
+    template_name = 'home.html'
+    model = Post
+    context_object_name = 'posts'
+
+    def get_queryset(self):
+        return get_posts(self.request.user, wall=True)
 
