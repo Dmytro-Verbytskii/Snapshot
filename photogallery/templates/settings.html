@@ -2,5 +2,9 @@
 
 {% block content %}
     {% csrf_token %}
+<<<<<<< HEAD
     <h5 class="Change_pass"><a href="{% url 'users:change_password' user.username %}">Change password</a></h5>
+=======
+    <h5><a href="{% url 'users:change_password' user.username %}">Change password</a></h5>
+>>>>>>> 34b65ed7b1e27ffa1794b889017ee306f9536481
 {% endblock content %}

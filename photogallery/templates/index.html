@@ -10,6 +10,12 @@
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
+<<<<<<< HEAD
+=======
+            <div class="navbar-header">
+                <div class="navbar-brand">Snapshot</div>
+            </div>
+>>>>>>> 34b65ed7b1e27ffa1794b889017ee306f9536481
             <ul class="nav navbar-nav">
 
                 <li><a href="/">Home</a></li>
@@ -18,10 +24,17 @@
                 <li><a href="{% url 'users:login' %}">Sign In</a></li>
                 {% else %}
                 <li><a href="{% url 'users:profile' user.username %}">{{ user.username }}</a></li>
+<<<<<<< HEAD
                 <li><a href="{% url 'users:user_list' %}">Browse people</a></li>
                 <li><a href="{% url 'posts:create' %}">New Post</a></li>
                     <li><a href="{% url 'users:settings' user.username %}">Settings</a></li>
                     <li><a href="{% url 'users:logout' %}">Sign Out</a></li>
+=======
+                <li><a href="{% url 'users:logout' %}">Sign Out</a></li>
+                <li><a href="{% url 'posts:create' %}">New Post</a></li>
+                <li><a href="{% url 'users:user_list' %}">Browse people</a></li>
+                <li><a href="{% url 'users:settings' user.username %}">Settings</a></li>
+>>>>>>> 34b65ed7b1e27ffa1794b889017ee306f9536481
                 {% endif %}
 
             </ul>
